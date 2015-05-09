@@ -1,0 +1,20 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:EntityFrameworkInventory="clr-namespace:EntityFrameworkInventory;assembly=EntityFrameworkInventory" mc:Ignorable="d" x:Class="InventoryUI.MainWindow"
+        Title="Stephen Wiley Inventory Tool" Height="278" Width="369" Loaded="Window_Loaded">
+    <Window.Resources>
+        <CollectionViewSource x:Key="customerViewSource" d:DesignSource="{d:DesignInstance {x:Type EntityFrameworkInventory:Customer}, CreateList=True}"/>
+        <CollectionViewSource x:Key="vendorViewSource" d:DesignSource="{d:DesignInstance {x:Type EntityFrameworkInventory:Vendor}, CreateList=True}"/>
+    </Window.Resources>
+
+    <Grid>
+        <Label Content="I want to:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Button Content="View and Modify Parts" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Click="Partsbutton_Click" />
+        <Button Content="View and Modify Customers" HorizontalAlignment="Right" Margin="10,41,0,0" VerticalAlignment="Top" Click="Customerbutton_Click" />
+        <ScrollViewer Name="ErrScrollViewer" HorizontalAlignment="Left" Height="157" Margin="10,81,0,0" VerticalAlignment="Top" Width="341">
+            <TextBlock x:Name="ErrorlogBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="331"/>
+        </ScrollViewer>
+    </Grid>
+
+</Window>
